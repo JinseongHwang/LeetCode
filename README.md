@@ -46,3 +46,19 @@
 - `S[::1]` : 문자열의 사본 (0 ~ 4)
 - `S[::-1]` : 뒤집은 문자열 (4 ~ 0)
 
+### 람다식
+
+```python
+s = ['2 A', '1 B', '4 C', '1 A']
+
+sorted(s)
+>>> ['1 A', '1 B', '2 A', '4 C']
+
+def func(x):
+    return x.split()[1], x.split()[0]
+s.sort(key=func)
+>>> ['1 A', '2 A', ' 1 B', '4 C']
+
+s.sort(key=lambda x: (x.split()[1], x.split()[0]))
+>>> ['1 A', '2 A', ' 1 B', '4 C']
+```
