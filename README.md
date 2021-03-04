@@ -75,6 +75,9 @@ numberDict = defaultdict(lambda : 0)
 
 # list를 저장할 수 있는 딕셔너리 - default value: []
 listDict = defaultdict(list)
+
+# set을 저장할 수 있는 딕셔너리 - default value: empty set
+setDict = defaultdict(set)
 ```
 
 ### 정렬
