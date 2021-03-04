@@ -62,3 +62,52 @@ s.sort(key=func)
 s.sort(key=lambda x: (x.split()[1], x.split()[0]))
 >>> ['1 A', '2 A', ' 1 B', '4 C']
 ```
+
+### 자료구조
+
+```python
+# 기본 key값이 존재하지 않더라도 삽입 시에 키를 생성해줌
+from collections import defaultdict
+
+# 숫자를 저장할 수 있는 딕셔너리 - default value: 0
+numberDict = defaultdict(int)
+numberDict = defaultdict(lambda : 0)
+
+# list를 저장할 수 있는 딕셔너리 - default value: []
+listDict = defaultdict(list)
+```
+
+### 정렬
+
+```python
+a = [2, 5, 1, 9, 7]
+sorted(a) # 정렬된 결과를 반환한다.
+>>> [1, 2, 5, 7, 9]
+a # 하지만 원본 List는 정렬되지 않는다.
+>>> [2, 5, 1, 9, 7]
+
+a = 'zbdaf'
+sorted(a) # 각 문자로 분할 후 정렬된 List를 반환한다.
+>>> ['a', 'b', 'd', 'f', 'z']
+''.join(sorted(a)) # List형태를 빈 문자로 join하면 문자열로 만들 수 있다.
+>>> 'abdfz'
+
+a = [4, 1, 3, 2, 3]
+a.sort() # sort()는 원본 List 자체를 정렬하고, None을 반환한다. 대입하지말자.
+>>> [1, 2, 3, 3, 4]
+
+a = ['cde', 'cfc', 'abc', 'a', 'cdef']
+sorted(a)
+>>> ['a', 'abc', 'cde', 'cdef', 'cfc']
+sorted(a, key=len) # 문자열 길이로 정렬
+>>> ['a', 'cde', 'cfc', 'abc', 'cdef']
+
+def fn(s):
+    return s[0], s[-1]
+sorted(a, key=fn) # 첫 문자 또는 마지막 문자로 정렬
+>>> ['a', 'abc', 'cfc', 'cde', 'cdef']
+
+# 람다식으로 간소화
+sorted(a, key=lambda s: (s[0], s[-1]))
+>>> ['a', 'abc', 'cfc', 'cde', 'cdef']
+```
