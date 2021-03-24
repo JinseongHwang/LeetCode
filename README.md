@@ -32,12 +32,16 @@
 또한 동적 배열을 resizing하는 비율, Growth Factor에 대해 학습 후 블로그에 포스팅한다.   
 ex) C++: std::vector, Java: ArrayList, Python: list   
 
+<br>
+
 ### 빠른 입력
 ```python
 import sys
 input = sys.stdin.readline
 ```
 위와 같이 작성한 후 input() 그대로 사용하면 보다 빠르게 입력을 받을 수 있다.
+
+<br>
 
 ### 문자열 슬라이싱
 - 문자열을 다루는 Python 내장 기능이다. 매우 훌륭한 성능을 가진다. 따라서 가능하다면 문자열 처리는 문자열 슬라이싱 방법으로 처리하는 습관을 가지자.    
@@ -59,6 +63,8 @@ input = sys.stdin.readline
 - `S[::1]` : 문자열의 사본 (0 ~ 4)
 - `S[::-1]` : 뒤집은 문자열 (4 ~ 0)
 
+<br>
+
 ### 람다식
 
 ```python
@@ -76,6 +82,8 @@ s.sort(key=lambda x: (x.split()[1], x.split()[0]))
 >>> ['1 A', '2 A', ' 1 B', '4 C']
 ```
 
+<br>
+
 ### 자료구조
 
 ```python
@@ -92,6 +100,8 @@ listDict = defaultdict(list)
 # set을 저장할 수 있는 딕셔너리 - default value: empty set
 setDict = defaultdict(set)
 ```
+
+<br>
 
 ### 정렬
 
